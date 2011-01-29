@@ -3,7 +3,6 @@ import java.util.List;
 
 import net.sf.jtmdb.Movie;
 
-import org.json.JSONException;
 
 
 public class main {
@@ -16,10 +15,11 @@ public class main {
 		try {
 						
 			List<Movie> a = Movie.search("The Green Hornet");
-			System.out.println("Nome:"+a.get(0).getName());
-			System.out.println("Data:"+a.get(0).getReleasedDate());
-			System.out.println("IMDB ID:"+a.get(0).getImdbID());
-			
+			   for(int i=0; i<a.size(); i++){
+			System.out.println("Nome:"+a.get(i).getName());
+			System.out.println("Data:"+a.get(i).getReleasedDate());
+			System.out.println("IMDB ID:"+a.get(i).getImdbID());
+			   }
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
