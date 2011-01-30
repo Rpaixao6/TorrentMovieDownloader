@@ -13,7 +13,7 @@ public class main {
 	public static void main(String[] args) {
 		
 		cleanName("The.Green.Hornet.2010.TS.XViD-T0XiC-iNK");
-		
+		//teste
 		
 		try {
 						
