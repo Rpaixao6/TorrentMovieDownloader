@@ -1,14 +1,17 @@
+package config;
 import java.util.List;
 
-public class preferencies {
+public class ConfigurationsFile {
 
+	private int minYear;
+	
 	private double minRate;
 
 	private String minReleasequality;
 	
-	private double minNumberSeeds;
+	private int minNumberSeeds;
 	
-	private double minNumberLeechs;
+	private int minNumberLeechs;
 	
 	private String avoidGenre;
 	
@@ -34,7 +37,7 @@ public class preferencies {
 		return minNumberSeeds;
 	}
 
-	public void setMinNumberSeeds(double minNumberSeeds) {
+	public void setMinNumberSeeds(int minNumberSeeds) {
 		this.minNumberSeeds = minNumberSeeds;
 	}
 
@@ -42,7 +45,7 @@ public class preferencies {
 		return minNumberLeechs;
 	}
 
-	public void setMinNumberLeechs(double minNumberLeechs) {
+	public void setMinNumberLeechs(int minNumberLeechs) {
 		this.minNumberLeechs = minNumberLeechs;
 	}
 
@@ -60,6 +63,23 @@ public class preferencies {
 
 	public void setAvoidWords(List avoidWords) {
 		this.avoidWords = avoidWords;
+	}
+
+	public void setMinYear(int minYear) {
+		this.minYear = minYear;
+	}
+
+	public int getMinYear() {
+		return minYear;
+	}
+
+	public String print() {
+		// TODO Auto-generated method stub
+		return ("Minimum Year: "+minYear+"\n"+
+				"Minimum TMDB rate: "+minRate+"\n"+
+				"Minimum Leechers: "+minNumberLeechs+"\n"+
+				"Minimum Seeders: "+minNumberSeeds+"\n"+
+				"Avoid genre: "+avoidGenre+"\n");
 	}
 	
 }
