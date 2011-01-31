@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+   <Preferences>
+      <minRate>5.0</minRate>
+      <minReleaseQuality>R5</minReleaseQuality>
+      <minNumberSeeds>100</minNumberSeeds>
+      <minNumberLeeches>100</minNumberLeeches>
+      <avoidGenre>Drama</avoidGenre>
+      <avoidWords>AvoidWord1, AvoidWord2</avoidWords>
+      <minYear>2009</minYear>
+   </Preferences>
+   <Program>
+   	<interval></interval>
+   </Program>
+</config>
