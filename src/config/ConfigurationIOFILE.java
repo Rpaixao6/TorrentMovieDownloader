@@ -1,4 +1,4 @@
-package test;
+package config;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -19,7 +19,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import config.ConfigurationsFile;
 
 public class ConfigurationIOFILE {
 	private static final String FILENAME = "config.xml";
