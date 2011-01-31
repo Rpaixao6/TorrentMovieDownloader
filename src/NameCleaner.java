@@ -16,21 +16,21 @@ public class NameCleaner {
 		for (int i=0; i!=aux.length;i++){
 			aux[i]=aux[i].trim();
 			if(aux[i]!=""){
-			if (!isYear(aux[i]))
-				if (year ==0)
-					name=name+aux[i]+" ";
-				else{
-					if (isReleaseQuality(aux[i])){
-					releaseQuality=aux[i]; 
-					i=aux.length-1;
+				if (!isYear(aux[i]))
+					if (year ==0)
+						name=name+aux[i]+" ";
+					else{
+						if (isReleaseQuality(aux[i])){
+							releaseQuality=aux[i]; 
+							i=aux.length-1;
+						}
 					}
-				}
-			else
-				year=Integer.parseInt(aux[i]);
-		}
+				else
+					year=Integer.parseInt(aux[i]);
+			}
 		}
 	}
-	
+
 	private boolean isReleaseQuality(String string) {
 		string=string.trim();
 		try{
@@ -40,7 +40,7 @@ public class NameCleaner {
 		catch (Exception e){
 			System.out.println("ERROR - Release Quality format not right");
 			System.out.println(string);
-		return false;
+			return false;
 		}
 	}
 
@@ -49,8 +49,8 @@ public class NameCleaner {
 		// Check if String is number
 		try{
 			if (string.length()==4){ //Checks if number has 4 digits.
-			Integer.parseInt(string);
-			return true;
+				Integer.parseInt(string);
+				return true;
 			}
 		}
 		catch (Exception e){
@@ -58,6 +58,6 @@ public class NameCleaner {
 			System.out.println(string);
 			return false;
 		}
-	return false;
+		return false;
 	}
 }
