@@ -19,6 +19,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import sun.net.www.http.HttpClient;
+
 
 public class ConfigurationIOFILE {
 	private static final String FILENAME = "config.xml";
@@ -41,8 +43,7 @@ public class ConfigurationIOFILE {
 			Node fstNode = nodeLst.item(0);
 			Element fstElmnt = (Element) fstNode;
 
-			
-			
+		
 			//minRate
 			NodeList fstNmElmntLst = fstElmnt.getElementsByTagName("minRate");
 			Element fstNmElmnt = (Element) fstNmElmntLst.item(0);
