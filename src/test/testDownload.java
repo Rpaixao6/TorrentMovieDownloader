@@ -1,7 +1,12 @@
 package test;
 
-import download.Downloader;
-import download.JGet;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import wGet.WGETJava;
+
+
 
 public class testDownload {
 	
@@ -10,8 +15,16 @@ public class testDownload {
 	}
 
 	private void test() {
-		// TODO Auto-generated method stub
-		 new Downloader().downloadFile("http://rss.thepiratebay.org/201","201.xml");
-		new JGet().downloadFile("http://rss.thepiratebay.org/201");
+		
+		try {
+			new WGETJava().DownloadFile(new URL("http://torrents.thepiratebay.org/6143858/The_Mechanic_2011_TS_Xvid-Lyrical.6143858.TPB.torrent"),"file1.torrent");
+			new WGETJava().DownloadFile(new URL("http://rss.thepiratebay.org/201"),"201.xml");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
