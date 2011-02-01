@@ -1,6 +1,10 @@
 import java.io.IOException;
 import java.util.List;
 
+import cleaner.NameCleaner;
+
+import enums.ReleaseQuality;
+
 import net.sf.jtmdb.Movie;
 
 

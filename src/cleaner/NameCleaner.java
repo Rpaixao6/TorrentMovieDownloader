@@ -1,3 +1,6 @@
+package cleaner;
+import enums.ReleaseQuality;
+
 
 public class NameCleaner {
 	public String name="";
