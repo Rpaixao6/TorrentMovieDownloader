@@ -2,6 +2,10 @@ package test;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import wGet.WGETJava;
 
 import config.ConfigurationIOFILE;
 import config.ConfigurationsFile;
@@ -17,6 +21,8 @@ public class testConfig {
 		//inicializcao
 		ConfigurationsFile configFile = new ConfigurationsFile();
 		ConfigurationIOFILE configIO =new ConfigurationIOFILE();
+	
+		
 		File f= new File(FILENAME);
 		if(DEBUG)
 			System.out.println("DEBUG - Config file exists? "+ f.exists());
@@ -41,5 +47,7 @@ public class testConfig {
 	
 		
 	}
+
+
 	
 }

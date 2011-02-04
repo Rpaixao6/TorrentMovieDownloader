@@ -20,13 +20,13 @@ public class main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println(ReleaseQuality.valueOf("HDTV"));
+		System.out.println(ReleaseQuality.valueOf("hdtv"));
 		a= new NameCleaner();
-		a.clean("Inception (2010) DVDRip XviD-MAX");//The Kings.Speech.2001.DVDSCR.XviD.AC3-NYDIC");//"The.Green.Hornet.2010.TS.XViD-T0XiC-iNK");
+		a.clean("The Kings.Speech.2001.DVDSCR.XviD.AC3-NYDIC",false);//Inception (2010) DVDRip XviD-MAX");//The Kings.Speech.2001.DVDSCR.XviD.AC3-NYDIC");//"The.Green.Hornet.2010.TS.XViD-T0XiC-iNK");
 		System.out.println("Name cleaned: "+a.name);
 		System.out.println("Year: "+a.year);
 		System.out.println("Release: "+a.releaseQuality);
-		
+
 		try {
 						
 			List<Movie> movies = Movie.search(a.name);

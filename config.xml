@@ -3,7 +3,7 @@
    <Preferences>
       <minRate>5.0</minRate>
       <minReleaseQuality>R5</minReleaseQuality>
-      <minNumberSeeds>100</minNumberSeeds>
+      <minNumberSeeds>101</minNumberSeeds>
       <minNumberLeeches>100</minNumberLeeches>
       <avoidGenre>Drama</avoidGenre>
       <avoidWords>AvoidWord1, AvoidWord2</avoidWords>

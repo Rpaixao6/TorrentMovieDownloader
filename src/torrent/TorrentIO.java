@@ -13,11 +13,12 @@ import org.w3c.dom.NodeList;
 
 public class TorrentIO {
 	LinkedList<Torrent> torrentList =new LinkedList<Torrent>();
-	private static final boolean DEBUG = true;
+	private boolean DEBUG = true;
 
-	public LinkedList<Torrent>  getList (File filename){
+	public LinkedList<Torrent>  getList (File filename, boolean DEBUG){
+		this.DEBUG=DEBUG;
 		readRSS(filename);
-
+		
 		return torrentList;
 
 	}

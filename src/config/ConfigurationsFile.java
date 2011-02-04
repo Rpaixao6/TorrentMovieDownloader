@@ -75,11 +75,13 @@ public class ConfigurationsFile {
 
 	public String print() {
 		// TODO Auto-generated method stub
-		return ("Minimum Year: "+minYear+"\n"+
+		return ("Minimum Release:"+minReleasequality+"\n" +
+				"Minimum Year: "+minYear+"\n"+
 				"Minimum TMDB rate: "+minRate+"\n"+
 				"Minimum Leechers: "+minNumberLeechs+"\n"+
 				"Minimum Seeders: "+minNumberSeeds+"\n"+
 				"Avoid genre: "+avoidGenre+"\n");
+	
 	}
 	
 }

@@ -110,7 +110,7 @@ public class ConfigurationIOFILE {
 			NodeList svnthNmElmntLst = fstElmnt.getElementsByTagName("minYear");
 			Element svnthNmElmnt = (Element) svnthNmElmntLst.item(0);
 			NodeList svnthNm = svnthNmElmnt.getChildNodes();
-			configFile.setMinNumberLeechs(Integer.parseInt(  ((Node)  svnthNm.item(0)).getNodeValue()  ));
+			configFile.setMinYear(Integer.parseInt(  ((Node)  svnthNm.item(0)).getNodeValue()  ));
 			if (DEBUG)
 				System.out.println("DEBUG - minYear: "  + ((Node)  svnthNm.item(0)).getNodeValue());
 

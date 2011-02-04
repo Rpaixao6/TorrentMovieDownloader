@@ -1,5 +1,5 @@
 package enums;
 
 public enum ReleaseQuality {
-	HDTV, R5, TELESYNC, TS, DVDrip, DVDSCR, CAM, BDRIP
+	r5, telesync, ts, dvdrip, dvdscr, cam, bdrip, bluray, brrip, telecine, tc, scr, screener
 }
