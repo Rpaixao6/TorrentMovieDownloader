@@ -25,26 +25,38 @@ public class NameCleaner {
 		string=string.replace(')', ' ');
 		string=string.replaceAll("  "," ");
 		String [] aux= string.split(" ");
-
-		for (int i=0; i!=aux.length;i++){
-			aux[i]=aux[i].trim();
-			if(aux[i]!=""){
-				if (!isYear(aux[i]))
-					if (year ==0)
-						name=name+aux[i]+" ";
-					else{
-						aux[i]=aux[i].toLowerCase();
-						if (isReleaseQuality(aux[i])){
-							releaseQuality=aux[i]; 
-							i=aux.length-1;
+		
+		if(hasYearOnName(aux)){
+			for (int i=0; i!=aux.length;i++){
+				aux[i]=aux[i].trim();
+				if(aux[i]!=""){
+					if (!isYear(aux[i]))
+						if (year ==0)
+							name=name+aux[i]+" ";
+						else{
+							aux[i]=aux[i].toLowerCase();
+							if (isReleaseQuality(aux[i])){
+								releaseQuality=aux[i]; 
+								i=aux.length-1;
+							}
 						}
-					}
-				else
-					year=Integer.parseInt(aux[i]);
+					else
+						year=Integer.parseInt(aux[i]);
+				}
 			}
+		}else{
+			System.out.println("NAO HA ANO");
 		}
+	
 		if(!name.equals("") && year!=0 && !releaseQuality.equals("") )
 			cleaned=true;
+	}
+
+	private boolean hasYearOnName(String[] aux) {
+		for(int i= 0 ; i != aux.length;i++){
+			if(isYear(aux[i]))return true;
+		}
+		return false;
 	}
 
 	private boolean isReleaseQuality(String string) {
