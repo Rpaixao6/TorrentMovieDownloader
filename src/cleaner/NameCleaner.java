@@ -7,6 +7,8 @@ public class NameCleaner {
 	public int year;
 	public String releaseQuality="";
 	private boolean DEBUG=true;
+	private boolean quality_cleaned = false;
+	private boolean year_cleaned = false;
 	public boolean cleaned=false;
 
 	public void clean(String string, boolean DEBUG){
@@ -23,31 +25,45 @@ public class NameCleaner {
 		string=string.replace('.', ' ');
 		string=string.replace('(', ' ');
 		string=string.replace(')', ' ');
+		string=string.replace('{',' ');
+		string=string.replace('}',' ');
 		string=string.replaceAll("  "," ");
 		String [] aux= string.split(" ");
-		
+
 		if(hasYearOnName(aux)){
-			for (int i=0; i!=aux.length;i++){
+			for (int i=0; i!=aux.length && (!quality_cleaned || year==0);i++){
 				aux[i]=aux[i].trim();
+				aux[i]=aux[i].toLowerCase();
 				if(aux[i]!=""){
-					if (!isYear(aux[i]))
-						if (year ==0)
+					if (!isYear(aux[i])){
+						if (!isReleaseQuality(aux[i]) && !quality_cleaned){
 							name=name+aux[i]+" ";
-						else{
-							aux[i]=aux[i].toLowerCase();
+						}else{
 							if (isReleaseQuality(aux[i])){
 								releaseQuality=aux[i]; 
-								i=aux.length-1;
+								//								i++;
+								quality_cleaned = true;
 							}
 						}
-					else
+					}else
 						year=Integer.parseInt(aux[i]);
 				}
 			}
 		}else{
-			System.out.println("NAO HA ANO");
+			//clean name without year
+			System.out.println("Haven't Year.");
+			for (int i=0; i!=aux.length && !quality_cleaned;i++){
+				aux[i]=aux[i].trim();
+				aux[i]=aux[i].toLowerCase();
+				if( !isReleaseQuality(aux[i]) && !quality_cleaned){
+					name = name + aux[i]+" ";
+				}else{
+					releaseQuality=aux[i];
+					quality_cleaned = true;
+				}
+			}
 		}
-	
+
 		if(!name.equals("") && year!=0 && !releaseQuality.equals("") )
 			cleaned=true;
 	}
@@ -67,8 +83,8 @@ public class NameCleaner {
 		}
 		catch (Exception e){
 			if (DEBUG){
-			System.out.println("ERROR - Release Quality format not right");
-			System.out.println(string);
+				System.out.println("ERROR - Release Quality format not right");
+				System.out.println(string);
 			}
 			return false;
 		}
@@ -85,8 +101,8 @@ public class NameCleaner {
 		}
 		catch (Exception e){
 			if (DEBUG){
-			System.out.println("ERROR - Year Format not right");
-			System.out.println(string);
+				System.out.println("ERROR - Year Format not right");
+				System.out.println(string);
 			}
 			return false;
 		}
